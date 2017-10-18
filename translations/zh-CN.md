@@ -9,15 +9,15 @@
 
 这份文档整理了在当前前端项目中经常需要查阅的内容，并给出了最新的代码示例。
 
-你或许会因为不熟悉当前一些新的代码库（例如 React）所用到的 JavaScript 概念，而很难上手这些新框架。所以本文档的目的并非从零教你 JavaScript，而是帮助已经有一定编程基础的你。
+本文档的目的不是为了从零起步教授JavaScript，而是在于帮助有一定基础的开发人员熟悉因运用了这些 JavaScript 概念的当代的代码库（比如说以快速上手 React 为例）。
 
-除此之外，我（作者：[Manuel Beaudru](https://github.com/mbeaudru)）偶尔会写上一些我的小技巧，也会注意提示这只是我的个人提议。
+除此之外，有时也会提供一些个人建议，这些建议可能会有争议。但请谨记，这只是我的个人建议。
 
-> **注：** 这篇文档里提到的大多数概念来自于目前最新的 JavaScript（ES2015，即 ES6），你可以在[这里](http://es6-features.org)查看新增的特性，网站做得很棒。
+> **注：** 这篇文档里提到的大多数概念来自于目前最新的 JavaScript（ES2015，即 ES6），可以在[这里](http://es6-features.org)查看新增的特性，网站做得很棒。
 
 ### 参考材料
 
-当你觉得有的概念不容易理解时，你可以在下面的链接里面寻找答案。
+当感到有的术语不易理解时，可以在下面的链接里面寻找答案。
 
 - [MDN (Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/search?q=)
 - [You don't know JS（书）](https://github.com/getify/You-Dont-Know-JS)
@@ -46,6 +46,69 @@
           * [简洁性](#简洁性)
           * [*this* 关键字](#this-关键字)
       - [相关资料](#相关资料)
+    + [函数缺省值](#function-default-parameter-value)
+      - [参考资料](#external-resource-1)
+    + [对象和数值的析构](#destructuring-objects-and-arrays)
+      - [示例代码](#explanation-with-sample-code)
+      - [可用资源](#useful-resources-1)
+    + [Array 的操作方法 - map / filter / reduce](#array-methods---map--filter--reduce)
+      - [示例代码](#sample-code-2)
+      - [说明](#explanation)
+        * [Array.prototype.map()](#arrayprototypemap)
+        * [Array.prototype.filter()](#arrayprototypefilter)
+        * [Array.prototype.reduce()](#arrayprototypereduce)
+      - [参考资料](#external-resource-2)
+    + [展开运算符 "..."](#spread-operator-)
+      - [示例代码](#sample-code-3)
+      - [说明](#explanation-1)
+        * [迭代用法（如数组）](#in-iterables-like-arrays)
+        * [函数的可变参数](#function-rest-parameter)
+        * [对象属性的展开](#object-properties-spreading)
+      - [参考资料](#external-resources)
+    + [对象属性的简写](#object-property-shorthand)
+      - [说明](#explanation-2)
+      - [参考资料](#external-resources-1)
+    + [Promises](#promises)
+      - [示例代码](#sample-code-4)
+      - [说明](#explanation-3)
+        * [创建 promise](#create-the-promise)
+        * [Promise 处理方法的使用](#promise-handlers-usage)
+      - [参考资料](#external-resources-2)
+    + [模板字符串](#template-literals)
+      - [示例代码](#sample-code-5)
+      - [参考资料](#external-resources-3)
+    + [带标签的模板字符串](#tagged-template-literals)
+      - [参考资料](#external-resources-4)
+    + [导入 / 导出](#imports--exports)
+      - [示例代码及说明](#explanation-with-sample-code-1)
+        * [命名导出](#named-exports)
+        * [默认导入 / 导出](#default-import--export)
+      - [参考资料](#external-resources-5)
+    + [JavaScript *this*](#-javascript-this)
+      - [参考资料](#external-resources-6)
+    + [Class](#class)
+      - [示例](#samples)
+      - [参考资料](#external-resources-7)
+    + [Extends 及 super 关键字](#extends-and-super-keywords)
+      - [示例代码](#sample-code-6)
+      - [参考资料](#external-resources-8)
+    + [Async Await](#async-await)
+      - [示例代码](#sample-code-7)
+      - [说明](#explanation-with-sample-code-2)
+      - [出错处理](#error-handling)
+      - [参考资料](#external-resources-9)
+    + [真 / 伪](#truthy--falsy)
+      - [参考资料](#external-resources-10)
+    + [静态方法](#static-methods)
+      - [简短的说明](#short-explanation-1)
+      - [示例代码](#sample-code-8)
+      - [详细的说明](#detailed-explanation-2)
+        * [从静态方法中调用另一个静态方法](#calling-other-static-methods-from-a-static-method)
+        * [从非静态方法中调用静态方法](#calling-static-methods-from-non-static-methods)
+      - [参考资料](#external-resources-11)
+  * [术语总汇](#glossary)
+    + [作用域](#-scope)
+    + [变量变异](#-variable-mutation)
 
 ## 正文
 
